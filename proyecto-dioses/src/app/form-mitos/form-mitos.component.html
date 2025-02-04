@@ -1,0 +1,27 @@
+<div class="detalle-mito">
+  <form [formGroup]="mitoForm" (ngSubmit)="saveMito()" class="card-dios">
+    <div class="card-content">
+      <label for="Historia" class="form-label">Historia</label>
+      <input
+        type="text"
+        id="Historia"
+        formControlName="Historia"
+        placeholder="Historia..."
+        class="form-input"
+      />
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="submit-btn">
+        Guardar
+      </button>
+      <button
+        type="button"
+        (click)="cerrarModal()"
+        class="cancel-btn"
+      >
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

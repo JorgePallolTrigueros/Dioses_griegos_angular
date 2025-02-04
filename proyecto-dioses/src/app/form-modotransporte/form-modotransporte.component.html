@@ -1,0 +1,29 @@
+<div class="form-container">
+  <h2>{{ modoTransporte.Modo_TransporteId ? 'Editar' : 'Agregar' }} Modo de Transporte</h2>
+  <form (ngSubmit)="saveModoTransporte()" class="card-dios">
+    <div class="card-content">
+      <label for="medio" class="form-label">Medio:</label>
+      <input
+        type="text"
+        id="medio"
+        name="medio"
+        class="form-input"
+        [(ngModel)]="modoTransporte.Medio"
+        required
+      />
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="submit-btn">
+        {{ modoTransporte.Modo_TransporteId ? 'Actualizar' : 'Guardar' }}
+      </button>
+      <button
+        type="button"
+        (click)="router.navigate(['/modo-transporte-list'])"
+        class="cancel-btn"
+      >
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

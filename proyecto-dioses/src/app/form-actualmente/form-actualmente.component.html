@@ -1,0 +1,57 @@
+<div class="detalle-actualmente">
+  <h2 *ngIf="!actualenteId" class="form-title">Añadir Nuevo Actualente</h2>
+  <h2 *ngIf="actualenteId" class="form-title">Editar Actualente</h2>
+
+  <form [formGroup]="actualenteForm" (ngSubmit)="submitForm()" class="form-container">
+    <div class="form-content">
+      <!-- Campo Estado -->
+      <label for="Estado" class="form-label">Estado</label>
+      <input
+        type="text"
+        id="Estado"
+        formControlName="Estado"
+        placeholder="Estado actual"
+        class="form-input"
+      />
+      <div *ngIf="actualenteForm.get('Estado')?.invalid && actualenteForm.get('Estado')?.touched">
+        <small class="error">El estado es obligatorio y debe tener al menos 3 caracteres.</small>
+      </div>
+
+      <!-- Campo Información -->
+      <label for="Informacion" class="form-label">Información</label>
+      <textarea
+        id="Informacion"
+        formControlName="Informacion"
+        placeholder="Información adicional"
+        class="form-textarea"
+      ></textarea>
+      <div *ngIf="actualenteForm.get('Informacion')?.invalid && actualenteForm.get('Informacion')?.touched">
+        <small class="error">La información es obligatoria y no puede exceder los 500 caracteres.</small>
+      </div>
+
+      <!-- Campo DiosId -->
+      <label for="DiosId" class="form-label">Dios ID</label>
+      <input
+        type="number"
+        id="DiosId"
+        formControlName="DiosId"
+        placeholder="ID del Dios"
+        class="form-input"
+        readonly
+      />
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="submit-btn">
+        {{ actualenteId ? 'Actualizar' : 'Guardar' }}
+      </button>
+      <button
+        type="button"
+        (click)="router.navigate(['/dios', actualenteForm.value.DiosId])"
+        class="cancel-btn"
+      >
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

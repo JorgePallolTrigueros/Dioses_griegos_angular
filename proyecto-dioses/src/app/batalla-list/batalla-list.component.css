@@ -1,0 +1,86 @@
+/* batalla-list.component.css */
+/*@import '../path/to/global-styles.css';*/ /* Asegúrate de tener la ruta correcta si decides importar todos los estilos */
+
+.lista-batalla {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+.card-batalla {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.card-batalla:hover {
+  transform: scale(1.05);
+}
+
+.batalla-title {
+  font-size: 1.8em;
+  color: #ffcc00;
+  font-family: 'Cinzel', serif;
+  margin-bottom: 10px;
+}
+
+.batalla-description {
+  font-size: 1.1em;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.batalla-fecha {
+  font-size: 1.1em;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.batalla-button {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.batalla-button:hover {
+  background-color: #ffaa00;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.page-link {
+  background-color: #1a1a1a;
+  color: #ffcc00;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-link:hover {
+  background-color: #ffaa00;
+  color: #333;
+}
+
+.page-link.active {
+  background-color: #ffaa00;
+  color: #333;
+}

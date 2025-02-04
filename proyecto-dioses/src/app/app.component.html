@@ -1,0 +1,66 @@
+
+
+
+<nav class="navbar">
+  <div class="container">
+    <!-- Fila para el logo -->
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <div class="logo-container">
+          <img src="ruta-del-logo.png" alt="Logo" class="logo">
+        </div>
+      </div>
+    </div>
+
+    <!-- Fila para los enlaces de navegación -->
+    <div class="row mt-2"> <!-- mt-2 añade un margen entre el logo y los enlaces -->
+      <div class="col-12">
+        <ul class="navbar-list d-flex justify-content-center">
+          <li><a routerLink="/lista-dios">Lista de Dioses y Heroes</a></li>
+          <li><a routerLink="/batalla-list">Lista de Batallas</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="row">
+  <div class="col-12 col-md-8" style="height: 250px;">&nbsp;</div>
+</div>
+
+<!-- Botón para abrir el modal -->
+<!--<button class="btn btn-primary" (click)="abrirModal()">Abrir Modal</button>-->
+
+<!-- Modal de Bootstrap -->
+<div #modalContainer class="modal fade" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ modalTitulo }}</h5>
+        <button type="button" class="btn-close" (click)="cerrarModal()"></button>
+      </div>
+      <div class="modal-body">
+        <ng-container *ngIf="modalComponente === 'batalla-list'">
+          <app-batalla-list></app-batalla-list>
+        </ng-container>
+        <ng-container *ngIf="modalComponente === 'form-dios'">
+          <app-form-dios></app-form-dios>
+        </ng-container>
+        <ng-container *ngIf="modalComponente === 'form-mitos'">
+          <app-form-mitos></app-form-mitos>
+        </ng-container>
+        <ng-container *ngIf="modalComponente === 'form-bibliografia'">
+          <app-form-bibliografia></app-form-bibliografia>
+        </ng-container>
+        <ng-container *ngIf="modalComponente === 'form-actualmente'">
+          <app-form-actualmente></app-form-actualmente>
+        </ng-container>
+        <ng-container *ngIf="modalComponente === 'form-modotransporte'">
+          <app-form-modotransporte></app-form-modotransporte>
+        </ng-container>        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,1195 @@
+openapi: 3.0.0
+info:
+  title: home-iot-api
+  description: The API for the EatBacon IOT project
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/JORGEPALLOL1/Dioses_Griegos/1.0.0
+  description: SwaggerHub API Auto Mocking
+- url: https://virtserver.swaggerhub.com/JORGEPALLOL1/Dioses_Griegos/1.0.0
+  description: SwaggerHub API Auto Mocking
+- url: http://localhost:8080/v1
+paths:
+  /categorias:
+    get:
+      tags:
+        - Categorias
+      summary: Obtener todas las categorías
+      operationId: getCategorias
+      responses:
+        "200":
+          description: Lista de categorías
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Categoria'
+    post:
+      tags:
+        - Categorias
+      summary: Crear una nueva categoría
+      operationId: createCategoria
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Categoria'
+        required: true
+      responses:
+        "201":
+          description: Categoría creada
+        "400":
+          description: Datos inválidos
+  /categorias/{id}:
+    get:
+      tags:
+        - Categorias
+      summary: Obtener una categoría por ID
+      operationId: getCategoriaById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Detalle de la categoría
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Categoria'
+        "404":
+          description: Categoría no encontrada
+    put:
+      tags:
+        - Categorias
+      summary: Actualizar una categoría existente
+      operationId: updateCategoria
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Categoria'
+        required: true
+      responses:
+        "200":
+          description: Categoría actualizada
+        "404":
+          description: Categoría no encontrada
+    delete:
+      tags:
+        - Categorias
+      summary: Eliminar una categoría
+      operationId: deleteCategoria
+      parameters:
+        - name: id
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Categoría eliminada
+        "404":
+          description: Categoría no encontrada
+  /usuarios:
+    get:
+      tags:
+      - Usuario
+      summary: Obtener todos los usuarios
+      operationId: getUsuarios
+      responses:
+        "200":
+          description: Lista de usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Usuario'
+                x-content-type: application/json
+      x-swagger-router-controller: Usuario
+    post:
+      tags:
+      - Usuario
+      summary: Crear un nuevo usuario
+      operationId: createUsuario
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Usuario'
+      responses:
+        "201":
+          description: Usuario creado
+      x-swagger-router-controller: Usuario
+  /usuarios/{id}:
+    get:
+      tags:
+      - Usuario
+      summary: Obtener un usuario por ID
+      operationId: getUsuarioById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Detalle del usuario
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Usuario'
+        "404":
+          description: Usuario no encontrado
+      x-swagger-router-controller: Usuario
+    put:
+      tags:
+      - Usuario
+      summary: Actualizar un usuario existente
+      operationId: updateUsuario
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Usuario'
+      responses:
+        "200":
+          description: Usuario actualizado
+        "404":
+          description: Usuario no encontrado
+      x-swagger-router-controller: Usuario
+    delete:
+      tags:
+      - Usuario
+      summary: Eliminar un usuario
+      operationId: deleteUsuario
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Usuario eliminado
+        "404":
+          description: Usuario no encontrado
+      x-swagger-router-controller: Usuario
+  /modo_transporte:
+    get:
+      tags:
+      - ModoTransporte
+      summary: Obtener todos los modos de transporte
+      operationId: getModoTransporte
+      responses:
+        "200":
+          description: Lista de modos de transporte
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ModoTransporte'
+                x-content-type: application/json
+      x-swagger-router-controller: ModoTransporte
+    post:
+      tags:
+      - ModoTransporte
+      summary: Crear un nuevo modo de transporte
+      operationId: createModoTransporte
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModoTransporte'
+      responses:
+        "201":
+          description: Modo de transporte creado
+      x-swagger-router-controller: ModoTransporte
+  /modo_transporte/{id}:
+    get:
+      tags:
+      - ModoTransporte
+      summary: Obtener un modo de transporte por ID
+      operationId: getModoTransporteById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Detalle del modo de transporte
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModoTransporte'
+        "404":
+          description: Modo de transporte no encontrado
+      x-swagger-router-controller: ModoTransporte
+    put:
+      tags:
+      - ModoTransporte
+      summary: Actualizar un modo de transporte existente
+      operationId: updateModoTransporte
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModoTransporte'
+      responses:
+        "200":
+          description: Modo de transporte actualizado
+        "404":
+          description: Modo de transporte no encontrado
+      x-swagger-router-controller: ModoTransporte
+    delete:
+      tags:
+      - ModoTransporte
+      summary: Eliminar un modo de transporte
+      operationId: deleteModoTransporte
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Modo de transporte eliminado
+        "404":
+          description: Modo de transporte no encontrado
+      x-swagger-router-controller: ModoTransporte
+  /mito:
+    get:
+      tags:
+      - Mito
+      summary: Obtener todos los mitos
+      operationId: getMitos
+      responses:
+        "200":
+          description: Lista de mitos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Mito'
+                x-content-type: application/json
+      x-swagger-router-controller: Mito
+    post:
+      tags:
+      - Mito
+      summary: Crear un nuevo mito
+      operationId: createMito
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mito'
+      responses:
+        "201":
+          description: Mito creado
+      x-swagger-router-controller: Mito
+  /mito/{id}:
+    get:
+      tags:
+      - Mito
+      summary: Obtener un mito por ID
+      operationId: getMitoById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Detalle del mito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mito'
+        "404":
+          description: Mito no encontrado
+      x-swagger-router-controller: Mito
+    put:
+      tags:
+      - Mito
+      summary: Actualizar un mito existente
+      operationId: updateMito
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mito'
+      responses:
+        "200":
+          description: Mito actualizado
+        "404":
+          description: Mito no encontrado
+      x-swagger-router-controller: Mito
+    delete:
+      tags:
+      - Mito
+      summary: Eliminar un mito
+      operationId: deleteMito
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Mito eliminado
+        "404":
+          description: Mito no encontrado
+      x-swagger-router-controller: Mito
+  /mitos/dios/{id}:
+    get:
+      tags:
+      - Mito
+      summary: Obtener los mitos del ID del Dios
+      operationId: getMitosByDiosId
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Detalle del mito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mito'
+        "404":
+          description: Mito no encontrado
+      x-swagger-router-controller: Mito
+  /diosbatallas:
+    get:
+      tags:
+      - DiosBatalla
+      summary: Obtener todas las relaciones Dios-Batalla
+      operationId: getDiosBatallas
+      responses:
+        "200":
+          description: Lista de relaciones Dios-Batalla
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DiosBatalla'
+                x-content-type: application/json
+      x-swagger-router-controller: DiosBatalla
+    post:
+      tags:
+      - DiosBatalla
+      summary: Crear una nueva relación Dios-Batalla
+      operationId: createDiosBatalla
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DiosBatalla'
+      responses:
+        "201":
+          description: Relación Dios-Batalla creada
+      x-swagger-router-controller: DiosBatalla
+  /diosbatallas/{diosId}/{batallaId}:
+    get:
+      tags:
+      - DiosBatalla
+      summary: Obtener una relación Dios-Batalla por IDs
+      operationId: getDiosBatallaByIds
+      parameters:
+      - name: diosId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      - name: batallaId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Detalle de la relación Dios-Batalla
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DiosBatalla'
+        "404":
+          description: Relación no encontrada
+      x-swagger-router-controller: DiosBatalla
+    put:
+      tags:
+      - DiosBatalla
+      summary: Actualizar una relación Dios-Batalla existente
+      operationId: updateDiosBatalla
+      parameters:
+      - name: diosId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      - name: batallaId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DiosBatalla'
+      responses:
+        "200":
+          description: Relación Dios-Batalla actualizada
+        "404":
+          description: Relación no encontrada
+      x-swagger-router-controller: DiosBatalla
+    delete:
+      tags:
+      - DiosBatalla
+      summary: Eliminar una relación Dios-Batalla
+      operationId: deleteDiosBatalla
+      parameters:
+      - name: diosId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      - name: batallaId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Relación Dios-Batalla eliminada
+        "404":
+          description: Relación no encontrada
+      x-swagger-router-controller: DiosBatalla
+  /dios:
+    get:
+      tags:
+      - Dios
+      summary: Obtener todos los dioses
+      operationId: getDioses
+      responses:
+        "200":
+          description: Lista de dioses
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Dios'
+                x-content-type: application/json
+      x-swagger-router-controller: Dios
+    post:
+      tags:
+      - Dios
+      summary: Crear un nuevo dios
+      operationId: createDios
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dios'
+      responses:
+        "201":
+          description: Dios creado
+      x-swagger-router-controller: Dios
+  /dios/{id}:
+    get:
+      tags:
+      - Dios
+      summary: Obtener un dios por ID
+      operationId: getDiosById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Detalle del dios
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dios'
+        "404":
+          description: Dios no encontrado
+      x-swagger-router-controller: Dios
+    put:
+      tags:
+      - Dios
+      summary: Actualizar un dios existente
+      operationId: updateDios
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dios'
+      responses:
+        "200":
+          description: Dios actualizado
+        "404":
+          description: Dios no encontrado
+      x-swagger-router-controller: Dios
+    delete:
+      tags:
+      - Dios
+      summary: Eliminar un dios
+      operationId: deleteDios
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Dios eliminado
+        "404":
+          description: Dios no encontrado
+      x-swagger-router-controller: Dios
+  /actualentes/dios/{id}:
+    get:
+      tags:
+      - Mito
+      summary: Obtener los mitos del ID del Dios
+      operationId: getActualentesByDiosId
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Detalle del Actualente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Actualente'
+        "404":
+          description: Actualente no encontrado
+      x-swagger-router-controller: Actualente
+  /actualentes:
+    get:
+      tags:
+      - Actualente
+      summary: Obtener todos los actualentes
+      operationId: getActualentes
+      responses:
+        "200":
+          description: Lista de actualentes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Actualente'
+                x-content-type: application/json
+      x-swagger-router-controller: Actualente
+    post:
+      tags:
+      - Actualente
+      summary: Crear un nuevo actualente
+      operationId: createActualente
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Actualente'
+      responses:
+        "201":
+          description: Actualente creado
+      x-swagger-router-controller: Actualente
+  /actualentes/{id}:
+    get:
+      tags:
+      - Actualente
+      summary: Obtener un actualente por ID
+      operationId: getActualenteById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Detalle del actualente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Actualente'
+        "404":
+          description: Actualente no encontrado
+      x-swagger-router-controller: Actualente
+    put:
+      tags:
+      - Actualente
+      summary: Actualizar un actualente existente
+      operationId: updateActualente
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Actualente'
+      responses:
+        "200":
+          description: Actualente actualizado
+        "404":
+          description: Actualente no encontrado
+      x-swagger-router-controller: Actualente
+    delete:
+      tags:
+      - Actualente
+      summary: Eliminar un actualente
+      operationId: deleteActualente
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Actualente eliminado
+        "404":
+          description: Actualente no encontrado
+      x-swagger-router-controller: Actualente
+  /batallas:
+    get:
+      tags:
+      - Batalla
+      summary: Obtener todas las batallas
+      operationId: getBatallas
+      responses:
+        "200":
+          description: Lista de batallas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Batalla'
+                x-content-type: application/json
+      x-swagger-router-controller: Batalla
+    post:
+      tags:
+      - Batalla
+      summary: Crear una nueva batalla
+      operationId: createBatalla
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Batalla'
+      responses:
+        "201":
+          description: Batalla creada
+      x-swagger-router-controller: Batalla
+  /batallas/{id}:
+    get:
+      tags:
+      - Batalla
+      summary: Obtener una batalla por ID
+      operationId: getBatallaById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Detalle de la batalla
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Batalla'
+        "404":
+          description: Batalla no encontrada
+      x-swagger-router-controller: Batalla
+    put:
+      tags:
+      - Batalla
+      summary: Actualizar una batalla existente
+      operationId: updateBatalla
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Batalla'
+      responses:
+        "200":
+          description: Batalla actualizada
+        "404":
+          description: Batalla no encontrada
+      x-swagger-router-controller: Batalla
+    delete:
+      tags:
+      - Batalla
+      summary: Eliminar una batalla
+      operationId: deleteBatalla
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Batalla eliminada
+        "404":
+          description: Batalla no encontrada
+      x-swagger-router-controller: Batalla
+  /bibliografias:
+    get:
+      tags:
+      - Bibliografia
+      summary: Obtener todas las bibliografías
+      operationId: getBibliografias
+      responses:
+        "200":
+          description: Lista de bibliografías
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Bibliografia'
+                x-content-type: application/json
+      x-swagger-router-controller: Bibliografia
+    post:
+      tags:
+      - Bibliografia
+      summary: Crear una nueva bibliografía
+      operationId: createBibliografia
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Bibliografia'
+      responses:
+        "201":
+          description: Bibliografía creada
+      x-swagger-router-controller: Bibliografia
+  /bibliografias/{id}:
+    get:
+      tags:
+      - Bibliografia
+      summary: Obtener una bibliografía por ID
+      operationId: getBibliografiaById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Detalle de la bibliografía
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bibliografia'
+        "404":
+          description: Bibliografía no encontrada
+      x-swagger-router-controller: Bibliografia
+    put:
+      tags:
+      - Bibliografia
+      summary: Actualizar una bibliografía existente
+      operationId: updateBibliografia
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Bibliografia'
+      responses:
+        "200":
+          description: Bibliografía actualizada
+        "404":
+          description: Bibliografía no encontrada
+      x-swagger-router-controller: Bibliografia
+    delete:
+      tags:
+      - Bibliografia
+      summary: Eliminar una bibliografía
+      operationId: deleteBibliografia
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Bibliografía eliminada
+        "404":
+          description: Bibliografía no encontrada
+      x-swagger-router-controller: Bibliografia
+  /bibliografias/dios/{id}:
+    get:
+      tags:
+      -  bibliografia
+      summary: Obtener los  bibliografias del ID del Dios
+      operationId: getBibliografiasByDiosId
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Detalle del  bibliografia
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bibliografia'
+        "404":
+          description:  bibliografia no encontrado
+      x-swagger-router-controller: Bibliografia
+  /modo_transportes/dios/{id}:
+    get:
+      tags:
+      - actualente
+      summary: Obtener los modo_transportesdel ID del Dios
+      operationId: getModoTransporteByDiosId
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Detalle del actualente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Actualente'
+        "404":
+          description: modo_transporteno encontrado
+      x-swagger-router-controller: actualente
+
+
+
+components:
+  schemas:
+    Actualente:
+      type: object
+      properties:
+        ActualenteId:
+          type: integer
+          description: Identificador del Actualente
+        Estado:
+          type: string
+          description: Estado del Actualente
+        Informacion:
+          type: string
+          description: Información adicional
+        DiosId:
+          type: integer
+          description: Identificador del Dios relacionado
+      example:
+        DiosId: 6
+        Informacion: Informacion
+        ActualenteId: 0
+        Estado: Estado
+    Batalla:
+      type: object
+      properties:
+        BatallaId:
+          type: integer
+          description: Identificador de la Batalla
+        Nombre:
+          type: string
+          description: Nombre de la Batalla
+      example:
+        Nombre: Nombre
+        BatallaId: 0
+    Bibliografia:
+      type: object
+      properties:
+        BibliografiaId:
+          type: integer
+          description: Identificador de la Bibliografía
+        Referencia:
+          type: string
+          description: Referencia bibliográfica
+        DiosId:
+          type: integer
+          description: Identificador del Dios relacionado
+      example:
+        DiosId: 6
+        Referencia: Referencia
+        BibliografiaId: 0
+    Dios:
+      type: object
+      properties:
+        Id:
+          type: integer
+          description: Identificador del Dios
+        Name:
+          type: string
+          description: Nombre del Dios
+        Origen:
+          type: string
+          description: Origen del Dios
+        Descripcion:
+          type: string
+          description: Descripción del Dios
+        Simbolo:
+          type: string
+          description: Símbolo del Dios
+        Poderes:
+          type: string
+          description: Poderes del Dios
+        Genero:
+          type: string
+          description: Género del Dios
+        Clase:
+          type: string
+          description: Clase del Dios
+        Mitologia:
+          type: string
+          description: Mitología del Dios
+        Fotografia:
+          type: string
+          description: Fotografía del Dios
+        Categoria_id:
+          type: integer
+          description: Categoria del Dios
+      example:
+        Categoria_id: 6
+        Mitologia: Mitologia
+        Simbolo: Simbolo
+        Genero: Genero
+        Clase: Clase
+        Fotografia: Fotografia
+        Descripcion: Descripcion
+        Id: 0
+        Origen: Origen
+        Poderes: Poderes
+        Name: Name
+    DiosBatalla:
+      type: object
+      properties:
+        DiosId:
+          type: integer
+          description: Identificador del Dios
+        BatallaId:
+          type: integer
+          description: Identificador de la Batalla
+        FechaParticipacion:
+          type: string
+          description: Fecha de participación en la batalla
+          format: date-time
+      example:
+        DiosId: 0
+        FechaParticipacion: 2000-01-23T04:56:07.000+00:00
+        BatallaId: 6
+    Mito:
+      type: object
+      properties:
+        Id:
+          type: integer
+          description: Identificador del Mito
+        Historia:
+          type: string
+          description: Historia del Mito
+        DiosId:
+          type: integer
+          description: Identificador del Dios relacionado
+      example:
+        DiosId: 6
+        Historia: Historia
+        Id: 0
+    ModoTransporte:
+      type: object
+      properties:
+        Modo_TransporteId:
+          type: integer
+          description: Identificador del Modo de Transporte
+        Medio:
+          type: string
+          description: Medio de transporte
+        DiosId:
+          type: integer
+          description: Identificador del Dios relacionado
+      example:
+        DiosId: 6
+        Modo_TransporteId: 0
+        Medio: Medio
+    Usuario:
+      type: object
+      properties:
+        UsuarioId:
+          type: integer
+          description: Identificador del Usuario
+        Nombre:
+          type: string
+          description: Nombre del Usuario
+        Correo:
+          type: string
+          description: Correo electrónico del Usuario
+        Contraseña:
+          type: string
+          description: Contraseña del Usuario
+      example:
+        Nombre: Nombre
+        Correo: Correo
+        Contraseña: Contraseña
+        UsuarioId: 0
+    Categoria:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Identificador de la categoría
+        nombre:
+          type: string
+          description: Nombre de la categoría
+        definicion:
+          type: string
+          description: Definición de la categoría
+      example:
+        definicion: definicion
+        id: 0
+        nombre: nombre

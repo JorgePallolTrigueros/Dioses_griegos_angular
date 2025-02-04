@@ -1,0 +1,27 @@
+<div class="container">
+  <h2 class="form-title">Batallas</h2>
+
+  <!-- Formulario para agregar nueva batalla -->
+  <form (ngSubmit)="agregarBatalla()" class="form-container">
+    <div class="form-group">
+      <label for="nombre" class="form-label">Nombre de la Batalla</label>
+      <input
+        type="text"
+        class="form-input"
+        id="nombre"
+        [(ngModel)]="nuevaBatalla.Nombre"
+        name="nombre"
+        required
+      />
+    </div>
+    <button type="submit" class="submit-btn">Agregar Batalla</button>
+  </form>
+
+  <!-- Lista de batallas -->
+  <h3 class="form-title">Lista de Batallas</h3>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let batalla of batallas">
+      {{ batalla.Nombre }}
+    </li>
+  </ul>
+</div>

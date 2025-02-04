@@ -1,0 +1,83 @@
+<div class="detalle-dios">
+  <!-- Encabezado del dios -->
+  <div class="header-dios">
+    <img [src]="dios?.Fotografia" alt="{{ dios?.Name }}" class="header-img" />
+    <div class="header-info">
+      <h1 class="dios-name">{{ dios?.Name }}</h1>
+      <p class="dios-subtitle">{{ dios?.Origen }}</p>
+      <p>{{ dios?.Descripcion }}</p>
+      <button class="card-button" (click)="editDios()">Editar Dios</button>
+    </div>
+  </div>
+
+  <!-- Sección de Mitos -->
+  <section>
+    <h3>Mitos <button class="card-button" (click)="addMito()">Añadir</button></h3>
+    <ul class="lista-mitos">
+      <li class="card-mito" *ngFor="let mito of mitos">
+        <h4 class="mito-title">{{ mito?.Historia }}</h4>
+        <p class="mito-description">{{ mito?.Resumen }}</p>
+        <button class="card-button" (click)="editMito(mito)">Editar</button>
+        <button class="card-button" (click)="deleteMito(mito.id)">Borrar</button>
+        <button class="card-button" (click)="viewMito(mito)">Ver Más</button>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Sección de Batallas -->
+  <section>
+    <h3>Batallas <button class="card-button" (click)="addBatalla()">Añadir</button></h3>
+    <ul class="lista-batallas">
+      <li class="card-batalla" *ngFor="let batalla of batallas">
+        <h4 class="batalla-title">{{ batalla?.Nombre }}</h4>
+        <p class="batalla-description">{{ batalla?.Descripcion }}</p>
+        <button class="card-button" (click)="editBatalla(batalla)">Editar</button>
+        <button class="card-button" (click)="deleteBatalla(batalla.id)">Borrar</button>
+        <button class="card-button" (click)="viewBatalla(batalla)">Ver Más</button>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Sección de Bibliografías -->
+  <section>
+    <h3>Bibliografías <button class="card-button" (click)="addBibliografia()">Añadir</button></h3>
+    <ul class="lista-batallas">
+      <li class="card-batalla" *ngFor="let bibliografia of bibliografias">
+        <h4 class="batalla-title">{{ bibliografia?.Referencia }}</h4>
+        <p class="batalla-description">{{ bibliografia?.Descripcion }}</p>
+        <button class="card-button" (click)="editBibliografia(bibliografia)">Editar</button>
+        <button class="card-button" (click)="deleteBibliografia(bibliografia.BibliografiaId)">Borrar</button>
+        <button class="card-button" (click)="viewBibliografia(bibliografia)">Ver Más</button>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Sección de Bibliografías -->
+  <section>
+    <h3>Actualmente <button class="card-button" (click)="addActualmente()">Añadir</button></h3>
+    <ul class="lista-batallas">
+      <li class="card-batalla" *ngFor="let actualmente of actualentes">
+        <h4 class="batalla-title">{{ actualmente?.Estado }}</h4>
+        <p class="batalla-description">{{ actualmente?.Informacion }}</p>
+        <button class="card-button" (click)="editActualmente(actualmente)">Editar</button>
+        <button class="card-button" (click)="deleteActualmente(actualmente.id)">Borrar</button>
+        <button class="card-button" (click)="viewActualmente(actualmente)">Ver Más</button>
+      </li>
+    </ul>
+  </section>
+
+
+  <!-- Sección de Modos de Transporte -->
+  <section *ngIf="modosTransporte.length">
+    <h3>Modo de Transporte <button class="card-button" (click)="addModoTransporte()">Añadir</button></h3>
+    <ul class="lista-modos">
+      <li class="card" *ngFor="let transporte of modosTransporte">
+        <h4>{{ transporte?.Medio }}</h4>
+        <p>{{ transporte?.Descripcion }}</p>
+        <button class="card-button" (click)="editModoTransporte(transporte)">Editar</button>
+        <button class="card-button" (click)="deleteModoTransporte(transporte.id)">Borrar</button>
+        <button class="card-button" (click)="viewModoTransporte(transporte)">Ver Más</button>
+      </li>
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,1305 @@
+/* Estilos generales para todas las tarjetas */
+.card-dios {
+  background: linear-gradient(145deg, #212121, #1e1e1e);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px rgba(50, 50, 50, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+  margin: 20px;
+  position: relative;
+}
+
+/* Al hacer hover, aplicamos un efecto de aumento */
+.card-dios:hover {
+  transform: scale(1.05);
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7), -8px -8px 20px rgba(50, 50, 50, 0.2);
+}
+
+/* Imagen dentro de la tarjeta */
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: sepia(30%);
+}
+
+/* Contenido textual de la tarjeta */
+.card-content {
+  padding: 15px;
+  color: #f0f0f0;
+}
+
+/* Título del dios */
+.card-title {
+  font-size: 1.8em;
+  color: #ffcc00;
+  margin: 0 0 10px 0;
+  font-family: 'Cinzel', serif; /* Fuente artística */
+}
+
+/* Descripción del dios */
+.card-description {
+  font-size: 1em;
+  color: #ddd;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Etiquetas dentro de la tarjeta */
+.card-tags {
+  margin-bottom: 10px;
+}
+
+.tag {
+  background-color: #444;
+  color: #ffcc00;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  margin-right: 5px;
+}
+
+/* Botón para ver más detalles */
+.card-button {
+  text-decoration: none;
+  background-color: #ffcc00;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: #ffaa00;
+}
+
+.lista-categorias {
+  min-height: calc(100vh - 100px); /* Ocupa casi toda la altura de la ventana menos 100px */
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+
+.card-categoria {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.card-categoria:hover {
+  transform: scale(1.05);
+}
+
+.categoria-title {
+  font-size: 1.8em;
+  color: #ffcc00;
+  font-family: 'Cinzel', serif;
+  margin-bottom: 10px;
+}
+
+.categoria-description {
+  font-size: 1.1em;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.categoria-button {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.categoria-button:hover {
+  background-color: #ffaa00;
+}
+
+.card-categoria {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-categoria:hover {
+  box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+.categoria-title {
+  font-size: 1.5em;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.categoria-description {
+  color: #ddd;
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+.categoria-button {
+  text-decoration: none;
+  background-color: #ffcc00;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.categoria-button:hover {
+  background-color: #ffaa00;
+}
+
+
+.card-usuario {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.page-link {
+  background-color: #1a1a1a;
+  color: #ffcc00;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-link:hover {
+  background-color: #ffaa00;
+  color: #333;
+}
+
+.page-link.active {
+  background-color: #ffaa00;
+  color: #333;
+}
+
+.usuario-name {
+  font-size: 1.4em;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.usuario-info {
+  font-size: 1em;
+  color: #ccc;
+}
+.detalle-dios {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #ddd;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+  color: #ffcc00;
+  font-family: 'Cinzel', serif;
+  margin-bottom: 15px;
+}
+
+/* Encabezado del Dios */
+.header-dios {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.header-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: sepia(20%);
+}
+
+.header-info {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.dios-name {
+  font-size: 2.5em;
+  color: #ffcc00;
+  margin-bottom: 10px;
+  font-family: 'Cinzel', serif;
+}
+
+.dios-subtitle {
+  font-size: 1.2em;
+  color: #ffcc00;
+  opacity: 0.8;
+}
+
+/* Descripción detallada */
+.descripcion-dios {
+  margin-bottom: 30px;
+}
+
+.descripcion-dios p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* Estadísticas */
+.estadisticas-dios {
+  background: #292929;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.estadisticas-dios ul {
+  list-style: none;
+  padding: 0;
+}
+
+.estadisticas-dios li {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.estadisticas-dios strong {
+  color: #ffcc00;
+}
+
+/* Galería de imágenes */
+.galeria-dios {
+  margin-bottom: 40px;
+}
+
+.galeria-imagenes {
+  display: flex;
+  gap: 15px;
+}
+
+.galeria-imagenes img {
+  width: 30%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.galeria-imagenes img:hover {
+  transform: scale(1.05);
+}
+
+/* Sección de comentarios */
+.comentarios-dios {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.comentarios-dios h2 {
+  margin-bottom: 15px;
+}
+
+.comentario {
+  background: #292929;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.comentario p {
+  margin: 0;
+}
+
+.comentario strong {
+  color: #ffcc00;
+}
+.pagina-mito {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header-mito {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.mito-title {
+  font-size: 2.5em;
+  color: #ffcc00;
+  font-family: 'Cinzel', serif;
+}
+
+.mito-description {
+  font-size: 1.2em;
+  color: #ddd;
+}
+
+.contenido-mito {
+  margin-bottom: 40px;
+}
+
+.contenido-mito p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.relacionados-mito {
+  margin-bottom: 40px;
+}
+
+.personajes-relacionados {
+  display: flex;
+  gap: 20px;
+}
+
+.personaje {
+  text-align: center;
+}
+
+.personaje img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffcc00;
+  margin-bottom: 10px;
+}
+
+.nombre-personaje {
+  font-size: 1.1em;
+  color: #ffcc00;
+}
+
+.pagina-biografia {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header-biografia {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.biografia-title {
+  font-size: 2.5em;
+  color: #ffcc00;
+  font-family: 'Cinzel', serif;
+}
+
+.biografia-subtitle {
+  font-size: 1.2em;
+  color: #ccc;
+}
+
+.contenido-biografia {
+  margin-bottom: 30px;
+}
+
+.contenido-biografia p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.eventos-importantes {
+  background: #292929;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.eventos-importantes ul {
+  list-style: none;
+  padding: 0;
+}
+
+.eventos-importantes li {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.eventos-importantes strong {
+  color: #ffcc00;
+}
+
+
+.pagina-transporte {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header-transporte {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.transporte-title {
+  font-size: 2.5em;
+  color: #ffcc00;
+  font-family: 'Cinzel', serif;
+}
+
+.transporte-description {
+  font-size: 1.2em;
+  color: #ddd;
+}
+
+.detalle-transporte {
+  margin-bottom: 40px;
+}
+
+.galeria-transporte {
+  margin-bottom: 40px;
+}
+
+.galeria-imagenes {
+  display: flex;
+  gap: 15px;
+}
+
+.galeria-imagenes img {
+  width: 30%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.galeria-imagenes img:hover {
+  transform: scale(1.05);
+}
+
+
+.lista-batallas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.card-batalla {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.card-batalla:hover {
+  transform: scale(1.05);
+}
+
+.batalla-title {
+  font-size: 1.8em;
+  color: #ffcc00;
+  font-family: 'Cinzel', serif;
+  margin-bottom: 10px;
+}
+
+.batalla-description {
+  font-size: 1.1em;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.batalla-button {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.batalla-button:hover {
+  background-color: #ffaa00;
+}
+
+
+
+
+.detalle-batalla {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header-batalla {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.batalla-title {
+  font-size: 2.5em;
+  color: #ffcc00;
+  font-family: 'Cinzel', serif;
+}
+
+.batalla-description {
+  font-size: 1.2em;
+  color: #ddd;
+}
+
+.eventos-batalla ul {
+  list-style: none;
+  padding: 0;
+}
+
+.eventos-batalla li {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.eventos-batalla strong {
+  color: #ffcc00;
+}
+
+.personajes-batalla {
+  display: flex;
+  gap: 20px;
+}
+
+.personaje {
+  text-align: center;
+}
+
+.personaje img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.nombre-personaje {
+  font-size: 1.1em;
+  color: #ffcc00;
+}
+
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.login-form h2 {
+  font-size: 2em;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.login-form label {
+  display: block;
+  font-size: 1.2em;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background-color: #292929;
+  color: #ddd;
+}
+
+.login-form button {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #ffaa00;
+}
+
+/* Estilos generales para la barra de navegación */
+nav {
+background-color: #1a1a1a; /* Fondo oscuro */
+padding: 15px; /* Espaciado alrededor del contenido */
+}
+
+/* Estilos para la lista dentro del nav */
+ul {
+list-style: none; /* Quita los puntos de lista */
+margin: 0;
+padding: 0;
+display: flex; /* Alinea los elementos de la lista en fila */
+justify-content: space-around; /* Agrega espacio entre los elementos */
+}
+
+/* Estilos para los elementos de la lista */
+li {
+display: inline;
+}
+
+/* Estilos para los enlaces */
+a {
+color: #ffcc00; /* Color dorado */
+text-decoration: none; /* Quita el subrayado */
+padding: 10px 20px; /* Añade espacio interno a los enlaces */
+transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+
+a:hover {
+background-color: #ffaa00; /* Fondo naranja claro al hacer hover */
+color: #333; /* Color de texto oscuro en hover */
+border-radius: 5px; /* Añade bordes redondeados al enlace en hover */
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+ul {
+  flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+  align-items: center; /* Centra los elementos */
+  gap: 10px; /* Añade espacio vertical entre los elementos */
+}
+
+a {
+  padding: 10px; /* Ajusta el padding para dispositivos móviles */
+  font-size: 1.1em; /* Aumenta un poco el tamaño del texto */
+}
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+ul {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+a {
+  font-size: 1.1em;
+}
+}
+
+
+/* Estilo general para la lista de dioses */
+.lista-dios {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: space-around;
+margin-top: 50px; /* Añade espacio en la parte superior */
+margin-bottom: 50px; /* Añade espacio en la parte inferior */
+padding: 20px; /* Añade relleno interno */
+}
+
+/* Estilo para cada tarjeta de dios */
+.card-dios {
+background: #1a1a1a;
+border-radius: 10px;
+padding: 20px;
+width: 300px;
+text-align: center;
+box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+transition: transform 0.3s ease;
+}
+
+.card-dios:hover {
+transform: scale(1.05);
+}
+
+/* Estilo para la imagen dentro de la tarjeta */
+.card-img {
+width: 100%;
+height: auto;
+border-radius: 5px;
+margin-bottom: 15px;
+}
+
+/* Título del dios */
+.card-title {
+font-size: 1.8em;
+color: #ffcc00;
+font-family: 'Cinzel', serif;
+margin-bottom: 10px;
+}
+
+/* Descripción del dios */
+.card-description {
+font-size: 1.1em;
+color: #ddd;
+margin-bottom: 15px;
+}
+
+/* Etiquetas dentro de la tarjeta */
+.card-tags {
+margin-bottom: 10px;
+}
+
+.tag {
+background-color: #444;
+color: #ffcc00;
+padding: 5px 10px;
+border-radius: 20px;
+font-size: 0.9em;
+margin-right: 5px;
+}
+
+/* Botón de ver más detalles */
+.card-button {
+background-color: #ffcc00;
+color: #333;
+padding: 10px 15px;
+border-radius: 20px;
+text-decoration: none;
+font-weight: bold;
+transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+background-color: #ffaa00;
+}
+
+
+/* Barra de búsqueda y filtro */
+.barra-busqueda {
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #1a1a1a;
+padding: 20px;
+margin-bottom: 20px;
+border-radius: 10px;
+}
+
+.input-busqueda {
+padding: 10px;
+width: 300px;
+margin-right: 10px;
+border-radius: 5px;
+border: 1px solid #444;
+background-color: #292929;
+color: #fff;
+}
+
+.select-categoria {
+padding: 10px;
+margin-right: 10px;
+border-radius: 5px;
+border: 1px solid #444;
+background-color: #292929;
+color: #fff;
+}
+
+.boton-buscar {
+padding: 10px 15px;
+background-color: #ffcc00;
+color: #333;
+border-radius: 5px;
+border: none;
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.boton-buscar:hover {
+background-color: #ffaa00;
+}
+
+/* Barra de búsqueda y filtro */
+.barra-busqueda {
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #1a1a1a;
+padding: 20px;
+margin-bottom: 20px;
+border-radius: 10px;
+}
+
+.input-busqueda {
+padding: 10px;
+width: 300px;
+margin-right: 10px;
+border-radius: 5px;
+border: 1px solid #444;
+background-color: #292929;
+color: #fff;
+}
+
+.boton-buscar {
+padding: 10px 15px;
+background-color: #ffcc00;
+color: #333;
+border-radius: 5px;
+border: none;
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.boton-buscar:hover {
+background-color: #ffaa00;
+}
+
+/* Estilo general para la lista de batallas */
+.lista-batalla {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: space-around;
+margin-top: 50px;
+margin-bottom: 50px;
+padding: 20px;
+}
+
+.card-batalla {
+background: #1a1a1a;
+border-radius: 10px;
+padding: 20px;
+width: 300px;
+text-align: center;
+box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+transition: transform 0.3s ease;
+}
+
+.card-batalla:hover {
+transform: scale(1.05);
+}
+
+.batalla-title {
+font-size: 1.8em;
+color: #ffcc00;
+font-family: 'Cinzel', serif;
+margin-bottom: 10px;
+}
+
+.batalla-description {
+font-size: 1.1em;
+color: #ddd;
+margin-bottom: 15px;
+}
+
+.batalla-fecha {
+font-size: 1.1em;
+color: #ccc;
+margin-bottom: 10px;
+}
+
+.paginacion {
+display: flex;
+justify-content: center;
+margin-top: 30px;
+}
+
+.page-link {
+background-color: #1a1a1a;
+color: #ffcc00;
+padding: 10px 15px;
+margin: 0 5px;
+border-radius: 5px;
+text-decoration: none;
+font-weight: bold;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-link:hover {
+background-color: #ffaa00;
+color: #333;
+}
+
+.page-link.active {
+background-color: #ffaa00;
+color: #333;
+}
+
+
+
+
+/* Barra de búsqueda y filtro */
+.barra-busqueda {
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #1a1a1a;
+padding: 20px;
+margin-bottom: 20px;
+border-radius: 10px;
+}
+
+.input-busqueda {
+padding: 10px;
+width: 300px;
+margin-right: 10px;
+border-radius: 5px;
+border: 1px solid #444;
+background-color: #292929;
+color: #fff;
+}
+
+.boton-buscar {
+padding: 10px 15px;
+background-color: #ffcc00;
+color: #333;
+border-radius: 5px;
+border: none;
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.boton-buscar:hover {
+background-color: #ffaa00;
+}
+
+.lista-mitos {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: space-around;
+margin-top: 50px;
+margin-bottom: 50px;
+padding: 20px;
+}
+
+.card-mito {
+background: #1a1a1a;
+border-radius: 10px;
+padding: 20px;
+width: 300px;
+text-align: center;
+box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+transition: transform 0.3s ease;
+}
+
+.card-mito:hover {
+transform: scale(1.05);
+}
+
+.mito-title {
+font-size: 1.8em;
+color: #ffcc00;
+margin-bottom: 10px;
+}
+
+.mito-description {
+font-size: 1.1em;
+color: #ddd;
+margin-bottom: 10px;
+}
+
+.mito-origen {
+font-size: 1.1em;
+color: #ccc;
+}
+
+
+.barra-busqueda {
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #1a1a1a;
+padding: 20px;
+margin-bottom: 20px;
+border-radius: 10px;
+}
+
+.input-busqueda {
+padding: 10px;
+width: 300px;
+margin-right: 10px;
+border-radius: 5px;
+border: 1px solid #444;
+background-color: #292929;
+color: #fff;
+}
+
+.boton-buscar {
+padding: 10px 15px;
+background-color: #ffcc00;
+color: #333;
+border-radius: 5px;
+border: none;
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.boton-buscar:hover {
+background-color: #ffaa00;
+}
+
+.lista-libros {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: space-around;
+margin-top: 50px;
+margin-bottom: 50px;
+padding: 20px;
+}
+
+.card-libro {
+background: #1a1a1a;
+border-radius: 10px;
+padding: 20px;
+width: 300px;
+text-align: center;
+box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+transition: transform 0.3s ease;
+}
+
+.card-libro:hover {
+transform: scale(1.05);
+}
+
+.libro-title {
+font-size: 1.8em;
+color: #ffcc00;
+margin-bottom: 10px;
+}
+
+.libro-autor {
+font-size: 1.1em;
+color: #ddd;
+margin-bottom: 10px;
+}
+
+.libro-description {
+font-size: 1.1em;
+color: #ccc;
+}
+
+
+
+.navbar {
+background-color: #1a1a1a; /* Fondo oscuro */
+padding: 15px 0;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px; /* Espacio debajo de la barra de navegación */
+}
+
+.navbar-list {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+gap: 20px;
+}
+
+.navbar-list li {
+display: inline;
+}
+
+.navbar-list a {
+color: #ffcc00;
+text-decoration: none;
+font-size: 1.2em;
+padding: 10px 20px;
+border-radius: 5px;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-list a:hover {
+background-color: #ffaa00;
+color: #333;
+}
+
+/* Estilo para el contenedor de categorías */
+.lista-categorias {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: space-around;
+padding: 20px;
+margin-top: 20px; /* Espacio arriba del contenedor de categorías */
+}
+
+.card-categoria {
+background: #1a1a1a;
+border-radius: 10px;
+padding: 20px;
+width: 300px;
+height: 200px;
+text-align: center;
+box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+transition: transform 0.3s ease;
+}
+
+.card-categoria:hover {
+transform: scale(1.05);
+}
+
+.categoria-title {
+font-size: 1.8em;
+color: #ffcc00;
+font-family: 'Cinzel', serif;
+margin-bottom: 10px;
+}
+
+.categoria-description {
+font-size: 1.1em;
+color: #ddd;
+margin-bottom: 15px;
+}
+
+.categoria-button {
+background-color: #ffcc00;
+color: #333;
+padding: 10px 15px;
+border-radius: 20px;
+text-decoration: none;
+font-weight: bold;
+transition: background-color 0.3s ease;
+}
+
+.categoria-button:hover {
+background-color: #ffaa00;
+}
+
+/* Paginación */
+.paginacion {
+display: flex;
+justify-content: center;
+margin-top: 30px;
+}
+
+.page-link {
+background-color: #1a1a1a;
+color: #ffcc00;
+padding: 10px 15px;
+margin: 0 5px;
+border-radius: 5px;
+text-decoration: none;
+font-weight: bold;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-link:hover {
+background-color: #ffaa00;
+color: #333;
+}
+
+.page-link.active {
+background-color: #ffaa00;
+color: #333;
+}
+
+
+.navbar {
+display: flex;
+justify-content: center; /* Centra el contenido horizontalmente */
+align-items: center; /* Centra el contenido verticalmente */
+background-color: #1a1a1a; /* Fondo oscuro */
+padding: 15px 0; /* Espaciado vertical */
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+position: fixed; /* Fija la barra de navegación en la parte superior */
+top: 0;
+width: 100%; /* Ocupa todo el ancho de la pantalla */
+z-index: 1000; /* Asegura que esté sobre otros elementos */
+}
+
+/* Estilo para la lista de navegación */
+.navbar-list {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+gap: 20px;
+}
+
+.navbar-list li {
+display: inline;
+}
+
+.navbar-list a {
+color: #ffcc00; /* Color de enlace dorado */
+text-decoration: none; /* Sin subrayado */
+font-size: 1.2em;
+padding: 10px 20px;
+border-radius: 5px;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-list a:hover {
+background-color: #ffaa00; /* Fondo en hover */
+color: #333; /* Color de texto en hover */
+}
+
+/* Agrega espacio superior en el contenido principal para evitar que se superponga con la barra de navegación fija */
+body {
+padding-top: 60px; /* Ajusta según la altura de la barra de navegación */
+}
+
+
+/* Contenedor del logo */
+.logo-container {
+display: flex;
+justify-content: center; /* Centra el logo horizontalmente */
+margin-top: 10px;
+margin-bottom: 10px; /* Espacio entre el logo y la barra de navegación */
+}
+
+.logo {
+width: 100px; /* Ajusta el tamaño del logo según tus necesidades */
+height: auto;
+}

@@ -1,0 +1,19 @@
+<div class="form-container">
+  <h2 class="form-title">{{ bibliografia.BibliografiaId ? 'Editar' : 'Agregar' }} Bibliografía</h2>
+  <form (ngSubmit)="saveBibliografia()" class="form-content">
+    <div class="form-group">
+      <label for="referencia" class="form-label">Referencia:</label>
+      <input
+        type="text"
+        id="referencia"
+        name="referencia"
+        [(ngModel)]="bibliografia.Referencia"
+        class="form-input"
+        required
+      />
+    </div>
+    <button type="submit" class="submit-btn">
+      {{ bibliografia.BibliografiaId ? 'Actualizar' : 'Guardar' }}
+    </button>
+  </form>
+</div>

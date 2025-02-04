@@ -1,0 +1,16 @@
+<div class="lista-batalla">
+  <div *ngFor="let batalla of paginatedBatallas" class="card-batalla">
+    <h3 class="batalla-title">{{ batalla.Nombre }}</h3>
+    <p class="batalla-description">Descripción de la batalla</p>
+    <p class="batalla-fecha">Fecha de la batalla</p>
+    <button (click)="deleteBatalla(batalla.BatallaId)" class="batalla-button">Eliminar</button>
+  </div>
+</div>
+
+<div class="paginacion">
+  <a href="#" *ngIf="currentPage > 1" (click)="changePage(currentPage - 1)" class="page-link">«</a>
+  <a href="#" *ngFor="let page of [1, 2, 3, 4, 5]" (click)="changePage(page)" [class.active]="page === currentPage" class="page-link">
+    {{ page }}
+  </a>
+  <a href="#" *ngIf="currentPage < 5" (click)="changePage(currentPage + 1)" class="page-link">»</a>
+</div>

@@ -1,0 +1,107 @@
+<div class="detalle-dios">
+  <h2 class="form-title">{{ diosId ? 'Editar' : 'Añadir Nuevo' }} Dios</h2>
+
+  <form [formGroup]="diosForm" (ngSubmit)="submitForm()" class="form-content">
+    <div class="form-group">
+      <label for="Name" class="form-label">Nombre</label>
+      <input
+        type="text"
+        id="Name"
+        formControlName="Name"
+        placeholder="Nombre del Dios"
+        class="form-input"
+      />
+
+      <label for="Origen" class="form-label">Origen</label>
+      <input
+        type="text"
+        id="Origen"
+        formControlName="Origen"
+        placeholder="Origen"
+        class="form-input"
+      />
+
+      <label for="Descripcion" class="form-label">Descripción</label>
+      <textarea
+        id="Descripcion"
+        formControlName="Descripcion"
+        placeholder="Descripción"
+        class="form-input"
+      ></textarea>
+
+      <label for="Simbolo" class="form-label">Símbolo</label>
+      <input
+        type="text"
+        id="Simbolo"
+        formControlName="Simbolo"
+        placeholder="Símbolo"
+        class="form-input"
+      />
+
+      <label for="Poderes" class="form-label">Poderes</label>
+      <input
+        type="text"
+        id="Poderes"
+        formControlName="Poderes"
+        placeholder="Poderes"
+        class="form-input"
+      />
+
+      <label for="Genero" class="form-label">Género</label>
+      <select id="Genero" formControlName="Genero" class="form-select">
+        <option value="">Selecciona</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+      </select>
+
+      <label for="Clase" class="form-label">Clase</label>
+      <input
+        type="text"
+        id="Clase"
+        formControlName="Clase"
+        placeholder="Clase"
+        class="form-input"
+      />
+
+      <label for="Mitologia" class="form-label">Mitología</label>
+      <input
+        type="text"
+        id="Mitologia"
+        formControlName="Mitologia"
+        placeholder="Mitología"
+        class="form-input"
+      />
+
+      <label for="Fotografia" class="form-label">Fotografía</label>
+      <input
+        type="text"
+        id="Fotografia"
+        formControlName="Fotografia"
+        placeholder="URL de la Fotografía"
+        class="form-input"
+      />
+
+      <label for="Id_mitologia" class="form-label">ID Mitología</label>
+      <input
+        type="number"
+        id="Id_mitologia"
+        formControlName="Id_mitologia"
+        placeholder="ID Mitología (opcional)"
+        class="form-input"
+      />
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="submit-btn">
+        {{ diosId ? 'Actualizar' : 'Crear' }}
+      </button>
+      <button
+        type="button"
+        (click)="cerrarModal()"
+        class="cancel-btn"
+      >
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

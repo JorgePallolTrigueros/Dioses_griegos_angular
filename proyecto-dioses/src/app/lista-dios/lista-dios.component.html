@@ -1,0 +1,27 @@
+<div class="barra-busqueda">
+  <label for="categoria-select">Filtrar por categoría:</label>
+  <select id="categoria-select" [(ngModel)]="selectedCategory" (change)="applyFilter()">
+    <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+  </select>
+</div>
+<button class="card-button" (click)="anadirDios()">Añadir Dios</button>
+<div class="lista-dios">
+
+  
+
+  <div class="card-dios" *ngFor="let dios of filteredDioses | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+    <img [src]="dios.Fotografia" alt="Imagen de {{dios.Name}}" class="card-img">
+    <div class="card-content">
+      <h3 class="card-title">{{ dios.Name }}</h3>
+      <p class="card-description">{{ dios.Descripcion }}</p>
+      <button (click)="viewDiosDetails(dios.Id)" class="card-button">Ver Más</button>
+      <button (click)="editDios(dios.Id)" class="card-button">Editar</button>
+      <button (click)="deleteDios(dios.Id)" class="card-button">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Controles de paginación -->
+<div class="paginacion">
+  <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+</div>

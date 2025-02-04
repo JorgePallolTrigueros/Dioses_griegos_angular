@@ -1,0 +1,29 @@
+<div class="form-container">
+  <h2 class="form-title">{{ categoria.idCategoria ? 'Editar' : 'Agregar' }} Categoría</h2>
+  <form (ngSubmit)="saveCategoria()" class="form-content">
+    <div class="form-group">
+      <label for="nombre" class="form-label">Nombre:</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        class="form-input"
+        [(ngModel)]="categoria.Nombre"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="definicion" class="form-label">Definición:</label>
+      <textarea
+        id="definicion"
+        name="definicion"
+        class="form-input"
+        [(ngModel)]="categoria.definicion"
+        required
+      ></textarea>
+    </div>
+    <button type="submit" class="submit-btn">
+      {{ categoria.idCategoria ? 'Actualizar' : 'Guardar' }}
+    </button>
+  </form>
+</div>
