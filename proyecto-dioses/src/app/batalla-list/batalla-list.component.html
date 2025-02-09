@@ -1,4 +1,9 @@
+<button class="batalla-button" (click)="addBatalla()">Añadir batalla</button>
+
 <div class="lista-batalla">
+  
+
+  
   <div *ngFor="let batalla of paginatedBatallas" class="card-batalla">
     <h3 class="batalla-title">{{ batalla.Nombre }}</h3>
     <p class="batalla-description">Descripción de la batalla</p>

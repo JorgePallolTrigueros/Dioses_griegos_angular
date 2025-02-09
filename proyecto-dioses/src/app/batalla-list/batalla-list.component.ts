@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 
 import { BatallaListService } from '../services/batalla-list.service';
 
+import { ModalService } from '../services/modal.service';
+
 
 
 @Component({
@@ -21,7 +23,7 @@ export class BatallaListComponent  implements OnInit {
   currentPage = 1;
   itemsPerPage = 4;
 
-  constructor(private batallaService: BatallaListService) {}
+  constructor(private batallaService: BatallaListService, private modalService: ModalService) {}
   ngOnInit(): void {
     this.loadBatallas();
   }
@@ -56,5 +58,9 @@ export class BatallaListComponent  implements OnInit {
 
   changePage(page: number): void {
     this.currentPage = page;
+  }
+
+  addBatalla() {
+    this.modalService.abrirModal('form-batalla', 'Añadir Batalla');
   }
 }

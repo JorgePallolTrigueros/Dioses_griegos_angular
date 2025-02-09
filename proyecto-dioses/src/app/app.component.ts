@@ -11,6 +11,8 @@ import { FormMitosComponent } from './form-mitos/form-mitos.component';
 import { FormActualmenteComponent } from './form-actualmente/form-actualmente.component';
 import { FormBibliografiaComponent } from './form-bibliografia/form-bibliografia.component';
 import { FormModoTransporteComponent} from './form-modotransporte/form-modotransporte.component';
+import { FormBatallaComponent } from './form-batalla/form-batalla.component';
+import { AsociarBatallaComponent } from './asociar-batalla/asociar-batalla.component';
 
 @Component({
   selector: 'app-root',
@@ -24,8 +26,9 @@ import { FormModoTransporteComponent} from './form-modotransporte/form-modotrans
     FormMitosComponent,
     FormActualmenteComponent,
     FormBibliografiaComponent,
-    FormModoTransporteComponent
-
+    FormModoTransporteComponent,
+    FormBatallaComponent,
+    AsociarBatallaComponent
 ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'] // Cambiado a styleUrls

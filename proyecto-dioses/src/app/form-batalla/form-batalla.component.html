@@ -14,14 +14,31 @@
         required
       />
     </div>
-    <button type="submit" class="submit-btn">Agregar Batalla</button>
+
+
+    <div class="form-actions">
+      <button type="submit" class="submit-btn">Agregar Batalla</button>
+      <button
+        type="button"
+        (click)="cerrarModal()"
+        class="cancel-btn"
+      >
+        Cancelar
+      </button>
+    </div>
+
+
   </form>
 
   <!-- Lista de batallas -->
-  <h3 class="form-title">Lista de Batallas</h3>
+  <!--<h3 class="form-title">Lista de Batallas</h3>
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let batalla of batallas">
       {{ batalla.Nombre }}
     </li>
-  </ul>
+  </ul>-->
 </div>
+
+
+
+

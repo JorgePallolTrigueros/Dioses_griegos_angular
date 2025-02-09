@@ -39,8 +39,11 @@
         <button type="button" class="btn-close" (click)="cerrarModal()"></button>
       </div>
       <div class="modal-body">
-        <ng-container *ngIf="modalComponente === 'batalla-list'">
-          <app-batalla-list></app-batalla-list>
+        <ng-container *ngIf="modalComponente === 'form-batalla'">
+          <app-form-batalla></app-form-batalla>
+        </ng-container>
+        <ng-container *ngIf="modalComponente === 'asociar-batalla'">
+          <app-asociar-batalla></app-asociar-batalla>
         </ng-container>
         <ng-container *ngIf="modalComponente === 'form-dios'">
           <app-form-dios></app-form-dios>

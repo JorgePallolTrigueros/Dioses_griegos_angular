@@ -28,17 +28,6 @@
       <div *ngIf="actualenteForm.get('Informacion')?.invalid && actualenteForm.get('Informacion')?.touched">
         <small class="error">La información es obligatoria y no puede exceder los 500 caracteres.</small>
       </div>
-
-      <!-- Campo DiosId -->
-      <label for="DiosId" class="form-label">Dios ID</label>
-      <input
-        type="number"
-        id="DiosId"
-        formControlName="DiosId"
-        placeholder="ID del Dios"
-        class="form-input"
-        readonly
-      />
     </div>
 
     <div class="form-actions">
@@ -47,7 +36,7 @@
       </button>
       <button
         type="button"
-        (click)="router.navigate(['/dios', actualenteForm.value.DiosId])"
+        (click)="cerrarModal()"
         class="cancel-btn"
       >
         Cancelar

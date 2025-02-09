@@ -28,10 +28,11 @@ export interface Actualente {
 export interface Batalla {
   BatallaId: number;
   Nombre: string;
+  seleccionada?: boolean;
 }
 
 export interface Bibliografia {
-  BibliografiaId: number;
+  BibliografiaId?: number;
   Referencia: string;
   DiosId: number;
 }

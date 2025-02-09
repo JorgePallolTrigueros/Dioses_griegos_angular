@@ -27,6 +27,7 @@
   <!-- Sección de Batallas -->
   <section>
     <h3>Batallas <button class="card-button" (click)="addBatalla()">Añadir</button></h3>
+    <h3>Batallas <button class="card-button" (click)="asociarBatalla()">Asociar</button></h3> 
     <ul class="lista-batallas">
       <li class="card-batalla" *ngFor="let batalla of batallas">
         <h4 class="batalla-title">{{ batalla?.Nombre }}</h4>

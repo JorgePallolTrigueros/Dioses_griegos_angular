@@ -29,7 +29,6 @@ export class FormActualmenteComponent implements OnInit {
     this.actualenteForm = this.fb.group({
       Estado: ['', [Validators.required, Validators.minLength(3)]], // Mínimo 3 caracteres
       Informacion: ['', [Validators.required, Validators.maxLength(500)]], // Máximo 500 caracteres
-      DiosId: [null, Validators.required], // Requerido
     });
   }
 
@@ -55,9 +54,9 @@ export class FormActualmenteComponent implements OnInit {
     }
 
     
-    cerrarModal(): void {
-      this.modalService.cerrarModal();
-    }
+  cerrarModal(): void {
+    this.modalService.cerrarModal();
+  }
 
   // Cargar datos del Actualente
   loadActualenteData(): void {
@@ -71,7 +70,6 @@ export class FormActualmenteComponent implements OnInit {
           this.actualenteForm.patchValue({
             Estado: data.Estado ?? 'Estado no especificado',
             Informacion: data.Informacion ?? 'Información no disponible',
-            DiosId: data.DiosId,
           });
         },
         (error) => {
@@ -87,12 +85,15 @@ export class FormActualmenteComponent implements OnInit {
     if (this.actualenteForm.valid) {
       const formData = this.actualenteForm.value;
 
+      const diosIdNb = parseInt(this.diosId as any);
+
       if (this.actualenteId) {
         // Actualizar Actualente existente
-        this.diosService.updateActualente({ ...formData, ActualenteId: this.actualenteId }).subscribe(
+        this.diosService.updateActualente({ ...formData, ActualenteId: this.actualenteId, DiosId: diosIdNb }).subscribe(
           () => {
             alert('Actualente actualizado con éxito');
-            this.router.navigate(['/dios', formData.DiosId]);
+            //this.router.navigate(['/dios', formData.DiosId]);
+            this.modalService.cerrarModal();
           },
           (error) => {
             console.error('Error al actualizar Actualente:', error);
@@ -101,10 +102,11 @@ export class FormActualmenteComponent implements OnInit {
         );
       } else {
         // Crear un nuevo Actualente
-        this.diosService.addActualente(formData).subscribe(
+        this.diosService.addActualente( {...formData, DiosId: diosIdNb }).subscribe(
           () => {
             alert('Actualente creado con éxito');
-            this.router.navigate(['/dios', formData.DiosId]);
+            //this.router.navigate(['/dios', formData.DiosId]);
+            this.modalService.cerrarModal();
           },
           (error) => {
             console.error('Error al crear Actualente:', error);

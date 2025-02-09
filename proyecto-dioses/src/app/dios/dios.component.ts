@@ -117,12 +117,16 @@ export class DiosComponent implements OnInit {
   }
   
   addBibliografia(): void {
-    this.router.navigate(['/form-bibliografia']);
+    //this.router.navigate(['/form-bibliografia']);
+    this.modalService.abrirModal('form-bibliografia', 'Añadir Bibliografia', { diosId: this.diosId });
   }
   
   editBibliografia(bibliografia: any): void {
-    if (bibliografia?.id) {
-      this.router.navigate(['/form-bibliografia', bibliografia.id]);
+    console.log('editBibliografia');
+    console.log(bibliografia);
+    if (bibliografia?.BibliografiaId) {
+      this.modalService.abrirModal('form-bibliografia', 'Edit Bibliografia', { bibliografiaId: bibliografia?.BibliografiaId });
+      //this.router.navigate(['/form-bibliografia', bibliografia.id]);
     } else {
       console.error('Bibliografía inválida:', bibliografia);
     }
@@ -226,6 +230,10 @@ export class DiosComponent implements OnInit {
   
   addBatalla(): void {
     this.router.navigate(['/form-batalla']);
+  }
+
+  asociarBatalla(): void {
+    this.modalService.abrirModal('asociar-batalla', 'Asociar Batalla');
   }
   
   editBatalla(batalla: any): void {

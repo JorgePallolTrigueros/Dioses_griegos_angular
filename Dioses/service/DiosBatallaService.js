@@ -23,15 +23,79 @@ connection.connect((err) => {
  **/
 exports.createDiosBatalla = function(body) {
   return new Promise(function(resolve, reject) {
-    const { DiosId, BatallaId, FechaParticipacion } = body;
-    const query = 'INSERT INTO diosbatallas (DiosId, BatallaId, FechaParticipacion) VALUES (?, ?, ?)';
+    const { DiosId, BatallasIds } = body;
+
+    // Borrar la relacion anterior
+    const query = 'DELETE FROM diosbatallas WHERE DiosId = ?';
+    connection.query(query, [DiosId], (error, results) => {
+      if (error) {
+        return reject(error);
+      } 
+      const query2 = 'INSERT INTO diosbatallas (DiosId, BatallaId, FechaParticipacion) VALUES (?, ?, ?)'
+
+      // TODO: Hay que ajustar esto para que se haga una transacción de SQL / Node con un Insert Multiple insertando todas las batallas seleccionadas (los ids)
+
+/*
+
+const mysql = require('mysql2/promise');
+
+// Configuración de la conexión a la base de datos
+const pool = mysql.createPool({
+  host: 'localhost',
+  user: 'tu_usuario',
+  password: 'tu_contraseña',
+  database: 'tu_base_de_datos'
+});
+
+async function asociarBatallas(diosId, batallas) {
+  const connection = await pool.getConnection();
+  try {
+    await connection.beginTransaction();
+
+    // 1️⃣ Eliminar batallas previas del dios
+    await connection.query('DELETE FROM diosbatallas WHERE DiosId = ?', [diosId]);
+
+    // 2️⃣ Si hay nuevas batallas, hacer un INSERT múltiple
+    if (batallas.length > 0) {
+      const values = batallas.map(b => [diosId, b.BatallaId, b.FechaParticipacion]);
+      const query = 'INSERT INTO diosbatallas (DiosId, BatallaId, FechaParticipacion) VALUES ?';
+
+      await connection.query(query, [values]);
+    }
+
+    await connection.commit();
+    console.log(`✅ Se asociaron ${batallas.length} batallas al dios ${diosId}`);
+  } catch (error) {
+    await connection.rollback();
+    console.error('❌ Error al asociar batallas:', error);
+  } finally {
+    connection.release();
+  }
+}
+
+// 🟢 Ejemplo de uso
+const diosId = 1;
+const batallas = [
+  { BatallaId: 5, FechaParticipacion: '2025-02-09' },
+  { BatallaId: 7, FechaParticipacion: '2025-02-10' },
+  { BatallaId: 12, FechaParticipacion: '2025-02-11' }
+];
+
+asociarBatallas(diosId, batallas);
+
+*/
+
+      //resolve(results);
+    });
+
+    /*const query = 'INSERT INTO diosbatallas (DiosId, BatallaId, FechaParticipacion) VALUES (?, ?, ?)';
 
     connection.query(query, [DiosId, BatallaId, FechaParticipacion], (error, results) => {
       if (error) {
         return reject(error);
       }
       resolve(results);
-    });
+    });*/
   });
 }
 

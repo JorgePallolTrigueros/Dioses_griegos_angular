@@ -1,0 +1,10 @@
+<h3 class="form-title">Lista de Batallas</h3>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let batalla of batallas">
+    <input type="checkbox" [(ngModel)]="batalla.seleccionada">
+    {{ batalla.Nombre }}
+  </li>
+</ul>
+
+<button class="btn btn-primary mt-3" (click)="guardarSeleccion()">Guardar</button>

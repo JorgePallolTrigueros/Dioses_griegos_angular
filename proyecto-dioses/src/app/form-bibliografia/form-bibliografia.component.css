@@ -66,3 +66,27 @@
   .submit-btn:active {
     transform: translateY(2px);
   }
+
+
+  .cancel-btn {
+    padding: 10px 20px;
+    background-color: #ff1744;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #d50000;
+    transform: translateY(-2px);
+  }
+  
+  .cancel-btn:active {
+    transform: translateY(2px);
+  }
+  
